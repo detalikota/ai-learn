@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <h1>Crazy, huh??</h1>
+    <ul>
+        <li>
+            yeah well
+        </li>
+        <li name="user_input">
+            cool
+        </li>
+    </ul>
+    <a href="{% url 'about' %}">Go to About page</a>
+    <h1 id="text">This will change</h1>
+    <button onclick="press()"> press me</button>
+    <img src="{% static 'pictures/elephant.jpg' %}">
+    <form action="{% url 'about' %}">
+        {% csrf_token %}
+        <input type="text" name="user_input">
+        <input type="submit" value="Click me boi">
+    </form>
+
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>
